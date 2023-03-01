@@ -1,0 +1,17 @@
+{
+    "title": "Sample 2",
+    "body": {
+        "type": "project",
+        "elements": [
+            {
+                "type": "comment",
+                "content": "Empty sample project JSON, modify to your liking"
+            }
+        ]
+    },
+    "project-info": {
+        "__NOTE__": "Metadata used by the projects page, doesn't control actual page content",
+        "description": "Another description here",
+        "thumbnail": "images/gallery/sample2.jpg"
+    }
+}

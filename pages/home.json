@@ -1,0 +1,13 @@
+{
+    "title": "Title Here",
+    "body": {
+        "type": "basic",
+        "path": "html/home.html"
+    },
+    "scripts": [
+        "script/gallery.min.js"
+    ],
+    "stylesheets": [
+        "stylesheets/home.css"
+    ]
+}

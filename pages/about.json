@@ -1,0 +1,10 @@
+{
+    "title": "About",
+    "body": {
+        "type": "basic",
+        "path": "html/about.html"
+    },
+    "stylesheets": [
+        "stylesheets/about.css"
+    ]
+}

@@ -1,0 +1,182 @@
+
+section[data-page] {
+    overflow: hidden;
+}
+
+div.imgArea {
+    width: 35vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    box-shadow: 0 0 16px black;
+}
+
+div.imgArea > img.backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(8px) brightness(40%);
+    object-fit: cover;
+    object-position: center center;
+}
+
+div.imgArea > img.photo {
+    z-index: 2;
+    position: absolute;
+    width: 28vw;
+    height: 28vw;
+    left: 3.5vw;
+    top: calc(50% - 14vw);
+    border-radius: 50%;
+    border: 2px solid #efefef;
+    box-sizing: border-box;
+}
+
+div.bioArea {
+    position: absolute;
+    width: 65vw;
+    height: 100%;
+    top: 0;
+    left: 35vw;
+    box-sizing: border-box;
+    padding: min(3vw, 3vh);
+    color: #efefef;
+    text-align: left;
+    font-size: 2.5vw;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    div.imgArea {
+        width: 100vw;
+        height: 35vh;
+    }
+
+    div.imgArea > img.photo {
+        z-index: 2;
+        position: absolute;
+        width: 28vh;
+        height: 28vh;
+        top: 3.5vh;
+        left: calc(50% - 14vh);
+        border-radius: 50%;
+        border: 2px solid #efefef;
+        box-sizing: border-box;
+    }
+    
+    div.bioArea {
+        width: 100vw;
+        height: 60vh;
+        top: 35vh;
+        left: 0;
+        text-align: center;
+        font-size: 3vw;
+    }
+}
+
+@media (max-aspect-ratio: 2/3) {
+    div.bioArea {
+        font-size: 4vw;
+    }
+}
+
+@media (min-aspect-ratio: 3/2) {
+    div.bioArea {
+        font-size: 2vw;
+    }
+}
+
+@media (min-aspect-ratio: 7/4) {
+    div.bioArea {
+        font-size: 1.5vw;
+    }
+}
+
+div.bioArea > h2 {
+    font-size: 1.4em;
+    margin: 0;
+    font-weight: 400;
+    font-family: 'Gloock', serif;
+}
+
+div.bioArea > h3 {
+    font-size: 0.8em;
+    font-weight: 200;
+    opacity: 0.6;
+    margin: 0;
+    margin-top: -0.2em;
+}
+
+div.bioArea > span.socials {
+    display: inline-block;
+    min-height: 1em;
+}
+
+a.social {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    opacity: 0.6;
+    background-color: #555555;
+    position: relative;
+    border-radius: 50%;
+}
+
+a.social > img {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    object-position: center center;
+}
+
+div.bioArea > p {
+    font-size: 0.75em;
+    text-align: justify;
+    max-width: 85%;
+    opacity: 0.9;
+    line-height: 0.8em;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    div.bioArea > p {
+        margin-left: 7.5%;
+    }
+
+    div.bioArea > p::before {
+        content: ' ';
+    }
+}
+
+@media (min-aspect-ratio: 7/4) {
+    div.bioArea > p {
+        line-height: 0.9em;
+    }
+}
+
+div.bioArea > p.minor {
+    opacity: 0.7;
+}
+
+div.bioArea > a.attrib {
+    position: absolute;
+    left: 0;
+    bottom: 0.5em;
+    width: 100%;
+    font-size: 0.4em;
+    text-align: center;
+    text-decoration: underline;
+    color: inherit;
+    opacity: 0.6;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    div.bioArea > a.attrib {
+        bottom: 2em;
+    }
+}

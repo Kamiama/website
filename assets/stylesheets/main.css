@@ -1,0 +1,211 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
+
+html, body {
+    background-color: #222222;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: #dedede;
+    font-family: 'Kanit', sans-serif;
+}
+
+:root {
+    --header-size: 6vw;
+}
+
+@media (max-aspect-ratio: 3/2) {
+    :root {
+        --header-size: 8vw;
+    }
+}
+
+@media (max-aspect-ratio: 4/5) {
+    :root {
+        --header-size: 6vh;
+    }
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 6vw;
+    height: var(--header-size);
+    background-color: #050505;
+    overflow: hidden;
+}
+
+header > h1 {
+    font-size: 3vw;
+    font-size: calc(var(--header-size) * 0.5);
+    font-weight: 600;
+    margin: 0.9vw;
+    margin: calc(var(--header-size) * 0.15);
+}
+
+header > h1 > span {
+    position: relative;
+    bottom: 0.28em;
+    left: 0.1em;
+}
+
+header > h1 > img {
+    display: inline-block;
+    width: 4vw;
+    width: calc(var(--header-size) * 2 / 3);
+    aspect-ratio: 1/1;
+}
+
+header > nav {
+    position: absolute;
+    right: 0;
+    font-size: 2.5vw;
+    font-size: calc(var(--header-size) * 0.375);
+    top: 1.2vw;
+    top: calc(var(--header-size) * 0.2);
+    right: 0.5em;
+    text-align: right;
+}
+
+header > nav > a {
+    color: inherit;
+    text-decoration: none;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+    opacity: 0.8;
+    transition-property: opacity;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+
+header > nav > a:hover {
+    opacity: 1;
+}
+
+header > nav > a.burger {
+    display: none;
+}
+
+@media (max-aspect-ratio: 4/5) {
+    header > nav > a {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    header > nav > a.burger {
+        pointer-events: initial;
+        display: initial;
+        opacity: 0.8;
+    }
+}
+
+@media (max-aspect-ratio: 2/5) {
+    header > nav > a {
+        position: fixed;
+    }
+
+    header > nav > a.burger {
+        position: initial;
+    }
+}
+
+header > nav > a.burger > img {
+    display: inline-block;
+    font-size: inherit;
+    width: 1.2em;
+    height: 1.2em;
+    position: relative;
+    top: 0.2em;
+}
+
+div.burger-dropdown {
+    position: fixed;
+    background-color: #111111;
+    color: #dedede;
+    font-size: 3vh;
+    box-sizing: border-box;
+    padding: 1vh;
+    border-radius: 0.75vh;
+    border-top-right-radius: 0;
+    clip-path: inset(0 0 100% 0);
+    transition-property: clip-path, opacity;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+    font-family: 'Kanit', sans-serif;
+    z-index: 5;
+    text-align: right;
+    pointer-events: none;
+    min-width: 20vw;
+    opacity: 0;
+}
+
+div.burger-dropdown.active {
+    opacity: 1;
+    clip-path: inset(0 0 0% 0);
+    pointer-events: initial;
+}
+
+div.burger-dropdown > a {
+    color: inherit;
+    text-decoration: none;
+}
+
+div.burger-dropdown > hr {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    border-width: 0.02em;
+}
+
+main {
+    position: fixed;
+    top: 6vw;
+    top: var(--header-size);
+    left: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: min(2vw, 2vh);
+    min-height: 100vh;
+    min-height: calc(100vh - 6vw);
+    min-height: calc(100vh - var(--header-size));
+}
+
+main > section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    overflow: auto;
+}
+
+section.loading-panel {
+    background-color: black;
+    background: url("../images/starry_sky.jpg");
+    background: url("../images/starry_sky.jpg"), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=);
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 8;
+    filter: brightness(70%);
+}
+
+section.loading-panel > div.progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100vh;
+    background-color: white;
+    opacity: 0.1;
+}
+
+noscript {
+    z-index: 20;
+}

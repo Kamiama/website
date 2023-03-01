@@ -1,0 +1,324 @@
+
+section[data-page="home"] {
+    overflow: hidden;
+}
+
+#gallery-container {
+    width: 100vw;
+    height: 100%;
+    position: relative;
+}
+
+#gallery-container > div {
+    position: absolute;
+    box-sizing: border-box;
+}
+
+:root {
+    --slideshow-scroll-dir: vertical;
+}
+
+#gallery-container > div.slideshow {
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#gallery-container > div.about {
+    top: 0;
+    left: 70%;
+    width: 30%;
+    height: 100%;
+}
+
+#gallery-container > div.accessibility {
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    clip: rect(0 0 0 0);
+}
+
+@media (max-aspect-ratio: 1/1) {
+
+    :root {
+        --slideshow-scroll-dir: horizontal;
+    }
+
+    #gallery-container > div.slideshow {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70%;
+    }
+    
+    #gallery-container > div.about {
+        top: 70%;
+        left: 0;
+        width: 100%;
+        height: 30%;
+    }
+
+}
+
+div.slideshow > img.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: blur(4px) brightness(70%);
+    pointer-events: none;
+    overflow: hidden;
+}
+
+div.slideshow > img.bg.top {
+    z-index: 3;
+}
+
+div.slideshow > img.bg.bottom {
+    z-index: 2;
+}
+
+div.slideshow > img.item {
+    position: absolute;
+    pointer-events: none;
+    z-index: 4;
+    box-shadow: 0 0 16px black;
+}
+
+div.slideshow > div.overlay {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 15%, rgba(0,0,0,0) 85%, rgba(0,0,0,0.6) 100%);
+    pointer-events: none;
+}
+
+div.slideshow > div.overlay > h2 {
+    font-family: 'Gloock', serif;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    font-size: 5vh;
+    font-size: min(5vw, 5vh);
+    margin-bottom: 0.3em;
+    text-shadow: 0 0 0.2em black;
+}
+
+div.slideshow > div.overlay > div.arrows {
+    position: absolute;
+    height: 15%;
+    top: 42.5%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.2%;
+}
+
+
+div.slideshow > div.overlay > div.arrows > img.arrow {
+    height: 100%;
+    pointer-events: initial;
+    float: right;
+    filter: drop-shadow(0 0 6px black);
+}
+
+div.slideshow > div.overlay > div.arrows > img.arrow.left {
+    transform: rotate(180deg);
+    float: left;
+}
+
+/*
+#gallery-container > div.about {
+    top: 0;
+    left: 70%;
+    width: 30%;
+    height: 100%;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    
+    #gallery-container > div.about {
+        top: 70%;
+        left: 0;
+        width: 100%;
+        height: 30%;
+    }
+
+}
+*/
+
+div.about > div.imageArea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 28vw;
+    aspect-ratio: 1/1;
+    background-image: red;
+}
+
+div.about > div.detail {
+    position: absolute;
+    top: 30vw;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    color: #dedede;
+    font-family: 'Kanit', sans-serif;
+    box-sizing: border-box;
+    padding: 0.6em;
+    font-size: 3vh;
+}
+
+@media (min-aspect-ratio: 3/2) {
+    div.about > div.imageArea {
+        width: 60%;
+        left: 20%;
+        min-height: 17vw;
+    }
+
+    div.about > div.detail {
+        top: 18vw;
+    }
+}
+
+@media (max-aspect-ratio: 1/1) {
+    div.about > div.imageArea {
+        min-height: initial;
+        width: initial;
+        height: 100%;
+        min-width: 28vh;
+    }
+
+    div.about > div.detail {
+        top: 0;
+        right: 0;
+        left: initial;
+        text-align: right;
+        font-size: 3.2vw;
+    }
+
+    div.detail > table.socials {
+        margin-left: auto;
+        margin-right: 0;
+    }
+}
+
+@media (max-aspect-ratio: 2/3) {
+    div.about > div.imageArea {
+        top: initial;
+        bottom: 0;
+        min-height: initial;
+        width: initial;
+        height: 60%;
+        min-width: 17vh;
+    }
+
+    div.about > div.detail {
+        font-size: 5vw;
+    }
+}
+
+div.about > div.imageArea > img {
+    width: 88%;
+    height: 88%;
+    box-sizing: border-box;
+    margin: 6%;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+div.detail > h2 {
+    font-size: 1.15em;
+    margin: 0;
+    font-family: 'Gloock', serif;
+    font-weight: 400;
+    text-shadow: 0 0 0.3em rgba(0, 0, 0, 0.6);
+}
+
+div.detail > h3 {
+    margin: 0;
+    font-size: 0.6em;
+    font-weight: 200;
+    opacity: 0.4;
+}
+
+div.detail > table.socials {
+    font-size: 0.75em;
+    font-weight: 300;
+    opacity: 0.6;
+    margin-top: 0.6em;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    div.detail > table.socials {
+        margin-left: auto;
+        margin-right: 0;
+        margin-top: 0.3em;
+    }
+}
+
+div.detail > table.socials > tbody > tr > td:first-of-type {
+    display: inline-block;
+    min-width: 1.2em;
+    box-sizing: content-box;
+    margin-right: 0.3em;
+    aspect-ratio: 1/1;
+    background-color: #666666;
+    border-radius: 50%;
+    position: relative;
+}
+
+div.detail > table.socials > tbody > tr > td:first-of-type > img {
+    position: absolute;
+    left: 15%;
+    top: 15%;
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+div.detail > table.socials > tbody > tr > td:nth-of-type(2) {
+    text-align: left;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    div.detail > table.socials > tbody > tr > td:nth-of-type(2) {
+        text-align: right;
+    }
+}
+
+div.detail > table.socials > tbody > tr > td:nth-of-type(2) > a {
+    text-decoration: inherit;
+    color: inherit;
+    font-style: inherit;
+    transition-property: color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+div.detail > table.socials > tbody > tr > td:nth-of-type(2) > a:hover {
+    color: white;
+}

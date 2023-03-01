@@ -1,0 +1,7 @@
+{
+    "title": "404",
+    "body": {
+        "type": "basic",
+        "path": "html/404.html"
+    }
+}

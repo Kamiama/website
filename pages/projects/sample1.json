@@ -1,0 +1,42 @@
+{
+    "title": "Sample 1",
+    "body": {
+        "type": "project",
+        "elements": [
+            {
+                "type": "comment",
+                "content": "Showing off all the different types of markdown elements supported"
+            },
+            {
+                "type": "title",
+                "text": "Sample 1",
+                "image": "images/gallery/sample1.jpg"
+            },
+            {
+                "type": "text",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec elit eleifend, congue urna a, condimentum lorem. Etiam eleifend urna vitae mauris egestas, vitae laoreet mauris pretium. Nunc ultrices felis felis. Nam convallis aliquam arcu eu scelerisque. Integer varius elit id lacus pharetra rhoncus. Nullam consectetur diam vel porta faucibus. Morbi semper sed sem vitae fringilla. Etiam in massa eu ipsum scelerisque semper vitae vel sapien. Ut et placerat leo. Proin tempor ac neque id vehicula. Nullam hendrerit dignissim odio, sed accumsan leo lobortis sit amet."
+            },
+            {
+                "type": "gallery",
+                "footer": "Footer text",
+                "images": [
+                    "images/gallery/sample3.jpg",
+                    "images/gallery/sample4.jpg",
+                    "images/gallery/sample5.jpg"
+                ]
+            },
+            {
+                "type": "text",
+                "content": "Fusce malesuada malesuada ligula, ac pretium dui pulvinar eu. Praesent odio mi, consectetur ac vulputate ut, dictum ac tortor. Nunc pulvinar nibh lacus, consequat iaculis libero hendrerit a. Praesent ultricies nisl eu est bibendum, suscipit efficitur dui molestie. Fusce scelerisque consequat consequat. Morbi nunc nulla, suscipit rutrum libero et, dictum eleifend nunc. Pellentesque sapien ex, aliquam non nunc ut, porta facilisis justo. Ut tincidunt eleifend elementum. Integer risus erat, finibus sit amet egestas vel, ultricies non ligula."
+            }
+        ]
+    },
+    "stylesheets": [
+        "stylesheets/project.css"
+    ],
+    "project-info": {
+        "__NOTE__": "Metadata used by the projects page, doesn't control actual page content",
+        "description": "Description here",
+        "thumbnail": "images/gallery/sample1.jpg"
+    }
+}

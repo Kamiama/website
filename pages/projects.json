@@ -1,0 +1,13 @@
+{
+    "title": "Projects",
+    "body": {
+        "type": "basic",
+        "path": "html/projects.html"
+    },
+    "scripts": [
+        "script/projects.min.js"
+    ],
+    "stylesheets": [
+        "stylesheets/projects.css"
+    ]
+}

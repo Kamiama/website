@@ -1,0 +1,13 @@
+{
+    "title": "Art",
+    "body": {
+        "type": "basic",
+        "path": "html/art.html"
+    },
+    "stylesheets": [
+        "stylesheets/art.css"
+    ],
+    "scripts": [
+        "script/art.min.js"
+    ]
+}

@@ -1,0 +1,168 @@
+
+section[data-page] {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+:root {
+    --cell-ratio: 3;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    :root {
+        --cell-ratio: 2;
+    }
+}
+
+@media (max-aspect-ratio: 8/15) {
+    :root {
+        --cell-ratio: 1;
+    }
+}
+
+@media (min-aspect-ratio: 3/2) {
+    :root {
+        --cell-ratio: 4;
+    }
+}
+
+div.art-cell {
+    display: block;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 33.33vw;
+    height: 33.33vw;
+    width: calc(100% / var(--cell-ratio));
+    height: calc(100vw / var(--cell-ratio));
+    position: relative;
+    overflow: hidden;
+    float: left;
+}
+
+div.art-cell > img {
+    position: absolute;
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    height: 110%;
+    filter: brightness(70%);
+    object-fit: cover;
+    object-position: center;
+    transition-property: filter, left, top, width, height;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+}
+
+div.art-cell:hover > img {
+    filter: brightness(100%);
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+div.art-cell > div.overlay {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.75) 100%);
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+}
+
+div.art-cell:hover > div.overlay {
+    opacity: 0;
+}
+
+div.art-cell > div.overlay > p {
+    color: #efefef;
+    font-size: 2.8333vw;
+    font-size: calc(8.5vw / var(--cell-ratio));
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    margin-top: calc(50% - 1em);
+    margin-bottom: 0;
+    font-weight: 500;
+    text-shadow: 0 0 0.3em rgba(0, 0, 0, 0.8);
+}
+
+div.art-modal {
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms;
+    transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+}
+
+div.art-modal.active {
+    pointer-events: initial;
+    opacity: 1;
+}
+
+div.art-modal > div.inner {
+    background-color: #121212;
+    width: 80vw;
+    height: 40vw;
+    box-sizing: border-box;
+    border-radius: min(2vw, 2vh);
+    position: absolute;
+    top: 8px;
+    top: calc(50vh - 20vw);
+    left: 10vw;
+}
+
+div.art-modal > div.inner > img {
+    height: 38vw;
+    width: 38vw;
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+    border-radius: min(2vw, 2vh);
+    object-fit: contain;
+    object-position: center center;
+    cursor: pointer;
+}
+
+div.art-modal > div.inner > .extern-icon {
+    z-index: 4;
+    position: absolute;
+    top: 2vw;
+    right: 42vw;
+    width: 3vw;
+    height: 3vw;
+    background-image: url("./assets/images/icon/link.svg");
+    background-size: 100%;
+    background-position: center center;
+    pointer-events: none;
+    filter: drop-shadow(0 0 0.5vw black);
+}
+
+div.art-modal > div.inner > p {
+    position: absolute;
+    top: 1vw;
+    right: 2vw;
+    max-width: 36vw;
+    max-height: 38vw;
+    overflow: auto;
+    text-align: right;
+    font-size: 2vw;
+    color: #efefef;
+    margin: 0;
+    font-weight: 300;
+}
